@@ -3,8 +3,12 @@ name: Deploy
 
 on:
   push:
+    branches:
+      - main
+      - renovate/**
     tags:
       - v*
+  pull_request:
 
 jobs:
   deploy:
@@ -13,7 +17,7 @@ jobs:
       id-token: write
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/python/deployment@e59369bbd745ef1eae9b8327fba32a4f87ff13ca # v0
+      - uses: paddyroddy/.github/actions/python/deployment@18d8678a5aea33da18556ae7823433325631dadd # v0
         with:
           pyproject-toml: ./pyproject.toml
-          python-version: "3.11"
+          python-version: "3.12"
