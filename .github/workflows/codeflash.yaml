@@ -21,7 +21,9 @@ jobs:
         id: bot_check
         run: |-
           echo "Checking if this PR is created by Codeflash bot..."
-          if [ "${{ github.event.pull_request.user.login }}" == "codeflash-ai[bot]" ]; then
+          if [
+            "${{ github.event.pull_request.user.login }}" == "codeflash-ai[bot]"
+          ]; then
             echo "PR created by Codeflash bot. Skipping optimization."
             echo "skip_remaining_steps=yes" >> $GITHUB_OUTPUT
           else
@@ -29,6 +31,7 @@ jobs:
             echo "It's not. Proceeding with the optimization."
           fi
 
+      # yamllint disable-line rule:line-length
       - uses: actions/checkout@v4
         if: steps.bot_check.outputs.skip_remaining_steps == 'no'
         with:
@@ -37,6 +40,7 @@ jobs:
 
       - name: Set up Python
         if: steps.bot_check.outputs.skip_remaining_steps == 'no'
+        # yamllint disable-line rule:line-length
         uses: actions/setup-python@v5
         with:
           cache-dependency-path: pyproject.toml
