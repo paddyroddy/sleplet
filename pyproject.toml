@@ -99,8 +99,6 @@ ignore = [
 ]
 
 [tool.codeflash]
-ignore-paths = []
-# All paths are relative to this pyproject.toml's directory.
 module-root = "src"
 test-framework = "pytest"
 tests-root = "tests"
