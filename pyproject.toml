@@ -98,6 +98,11 @@ ignore = [
     "src/sleplet/_version.py",
 ]
 
+[tool.codeflash]
+module-root = "src"
+test-framework = "pytest"
+tests-root = "tests"
+
 [tool.coverage]
 report = {skip_covered = true, sort = "cover"}
 run = {branch = true, parallel = true, source = [
