@@ -1,0 +1,1790 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<meta name="generator" content="pdoc3 0.11.1">
+<title>sleplet.functions API documentation</title>
+<meta name="description" content="Set of classes to create functions on the sphere.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/sanitize.min.css" integrity="sha512-y1dtMcuvtTMJc1yPgEqF0ZjQbhnc/bFhyvIyVNb9Zk5mIGtqVaAB1Ttl28su8AvFMOY0EwRbAe+HCLqj6W7/KA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/13.0.0/typography.min.css" integrity="sha512-Y1DYSb995BAfxobCkKepB1BqJJTPrOp3zPL74AWFugHHmmdcvO+C48WLrUOlhGMc0QG7AE3f7gmvvcrmX2fDoA==" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:1.5em;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:2em 0 .50em 0}h3{font-size:1.4em;margin:1.6em 0 .7em 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .2s ease-in-out}a:visited{color:#503}a:hover{color:#b62}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900;font-weight:bold}pre code{font-size:.8em;line-height:1.4em;padding:1em;display:block}code{background:#f3f3f3;font-family:"DejaVu Sans Mono",monospace;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em 1em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul ul{padding-left:1em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes: true } });</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS_CHTML" integrity="sha256-kZafAc6mZvK3W3v1pHOcUix30OHQN6pU/NO2oFkqZVw=" crossorigin></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => {
+hljs.configure({languages: ['bash', 'css', 'diff', 'graphql', 'ini', 'javascript', 'json', 'plaintext', 'python', 'python-repl', 'rust', 'shell', 'sql', 'typescript', 'xml', 'yaml']});
+hljs.highlightAll();
+})</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>sleplet.functions</code></h1>
+</header>
+<section id="section-intro">
+<p>Set of classes to create functions on the sphere.</p>
+</section>
+<section>
+<h2 class="section-title" id="header-submodules">Sub-modules</h2>
+<dl>
+<dt><code class="name"><a title="sleplet.functions.africa" href="africa.html">sleplet.functions.africa</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Africa" href="#sleplet.functions.Africa">Africa</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.axisymmetric_wavelet_coefficients_africa" href="axisymmetric_wavelet_coefficients_africa.html">sleplet.functions.axisymmetric_wavelet_coefficients_africa</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica">AxisymmetricWaveletCoefficientsAfrica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.axisymmetric_wavelet_coefficients_earth" href="axisymmetric_wavelet_coefficients_earth.html">sleplet.functions.axisymmetric_wavelet_coefficients_earth</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth">AxisymmetricWaveletCoefficientsEarth</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.axisymmetric_wavelet_coefficients_south_america" href="axisymmetric_wavelet_coefficients_south_america.html">sleplet.functions.axisymmetric_wavelet_coefficients_south_america</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica">AxisymmetricWaveletCoefficientsSouthAmerica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.axisymmetric_wavelets" href="axisymmetric_wavelets.html">sleplet.functions.axisymmetric_wavelets</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.AxisymmetricWavelets" href="#sleplet.functions.AxisymmetricWavelets">AxisymmetricWavelets</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.coefficients" href="coefficients.html">sleplet.functions.coefficients</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the abstract <code>Coefficients</code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.dirac_delta" href="dirac_delta.html">sleplet.functions.dirac_delta</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.DiracDelta" href="#sleplet.functions.DiracDelta">DiracDelta</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.earth" href="earth.html">sleplet.functions.earth</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Earth" href="#sleplet.functions.Earth">Earth</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.elongated_gaussian" href="elongated_gaussian.html">sleplet.functions.elongated_gaussian</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.ElongatedGaussian" href="#sleplet.functions.ElongatedGaussian">ElongatedGaussian</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.flm" href="flm.html">sleplet.functions.flm</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the abstract <code>Flm</code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.fp" href="fp.html">sleplet.functions.fp</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the abstract <code>Fp</code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.gaussian" href="gaussian.html">sleplet.functions.gaussian</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Gaussian" href="#sleplet.functions.Gaussian">Gaussian</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.harmonic_gaussian" href="harmonic_gaussian.html">sleplet.functions.harmonic_gaussian</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.HarmonicGaussian" href="#sleplet.functions.HarmonicGaussian">HarmonicGaussian</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.identity" href="identity.html">sleplet.functions.identity</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Identity" href="#sleplet.functions.Identity">Identity</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.noise_earth" href="noise_earth.html">sleplet.functions.noise_earth</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.NoiseEarth" href="#sleplet.functions.NoiseEarth">NoiseEarth</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.ridgelets" href="ridgelets.html">sleplet.functions.ridgelets</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Ridgelets" href="#sleplet.functions.Ridgelets">Ridgelets</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian" href="slepian.html">sleplet.functions.slepian</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Slepian" href="#sleplet.functions.Slepian">Slepian</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_africa" href="slepian_africa.html">sleplet.functions.slepian_africa</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianAfrica" href="#sleplet.functions.SlepianAfrica">SlepianAfrica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_dirac_delta" href="slepian_dirac_delta.html">sleplet.functions.slepian_dirac_delta</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianDiracDelta" href="#sleplet.functions.SlepianDiracDelta">SlepianDiracDelta</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_identity" href="slepian_identity.html">sleplet.functions.slepian_identity</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianIdentity" href="#sleplet.functions.SlepianIdentity">SlepianIdentity</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_noise_africa" href="slepian_noise_africa.html">sleplet.functions.slepian_noise_africa</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianNoiseAfrica" href="#sleplet.functions.SlepianNoiseAfrica">SlepianNoiseAfrica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_noise_south_america" href="slepian_noise_south_america.html">sleplet.functions.slepian_noise_south_america</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianNoiseSouthAmerica" href="#sleplet.functions.SlepianNoiseSouthAmerica">SlepianNoiseSouthAmerica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_south_america" href="slepian_south_america.html">sleplet.functions.slepian_south_america</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianSouthAmerica" href="#sleplet.functions.SlepianSouthAmerica">SlepianSouthAmerica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_wavelet_coefficients_africa" href="slepian_wavelet_coefficients_africa.html">sleplet.functions.slepian_wavelet_coefficients_africa</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica">SlepianWaveletCoefficientsAfrica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_wavelet_coefficients_south_america" href="slepian_wavelet_coefficients_south_america.html">sleplet.functions.slepian_wavelet_coefficients_south_america</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica">SlepianWaveletCoefficientsSouthAmerica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.slepian_wavelets" href="slepian_wavelets.html">sleplet.functions.slepian_wavelets</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SlepianWavelets" href="#sleplet.functions.SlepianWavelets">SlepianWavelets</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.south_america" href="south_america.html">sleplet.functions.south_america</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SouthAmerica" href="#sleplet.functions.SouthAmerica">SouthAmerica</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.spherical_harmonic" href="spherical_harmonic.html">sleplet.functions.spherical_harmonic</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SphericalHarmonic" href="#sleplet.functions.SphericalHarmonic">SphericalHarmonic</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.squashed_gaussian" href="squashed_gaussian.html">sleplet.functions.squashed_gaussian</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.SquashedGaussian" href="#sleplet.functions.SquashedGaussian">SquashedGaussian</a></code> class.</p></div>
+</dd>
+<dt><code class="name"><a title="sleplet.functions.wmap" href="wmap.html">sleplet.functions.wmap</a></code></dt>
+<dd>
+<div class="desc"><p>Contains the <code><a title="sleplet.functions.Wmap" href="#sleplet.functions.Wmap">Wmap</a></code> class.</p></div>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="sleplet.functions.Africa"><code class="flex name class">
+<span>class <span class="ident">Africa</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a topographic map of the Earth setting everything outide of the
+Africa region to zero.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Africa.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Africa.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Africa.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica"><code class="flex name class">
+<span>class <span class="ident">AxisymmetricWaveletCoefficientsAfrica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create axisymmetric wavelet coefficients of the Africa region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth"><code class="flex name class">
+<span>class <span class="ident">AxisymmetricWaveletCoefficientsEarth</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create axisymmetric wavelet coefficients of the Earth.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica"><code class="flex name class">
+<span>class <span class="ident">AxisymmetricWaveletCoefficientsSouthAmerica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create axisymmetric wavelet coefficients of the South America region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets"><code class="flex name class">
+<span>class <span class="ident">AxisymmetricWavelets</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create scale-discretised axisymmetric wavelets. As
+seen in <a href="https://doi.org/10.1051/0004-6361/201220729">https://doi.org/10.1051/0004-6361/201220729</a>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.AxisymmetricWavelets.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.AxisymmetricWavelets.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.DiracDelta"><code class="flex name class">
+<span>class <span class="ident">DiracDelta</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Dirac delta.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.DiracDelta.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.DiracDelta.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.DiracDelta.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Earth"><code class="flex name class">
+<span>class <span class="ident">Earth</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the topographic map of the Earth.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Earth.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Earth.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Earth.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.ElongatedGaussian"><code class="flex name class">
+<span>class <span class="ident">ElongatedGaussian</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create an elongated Gaussian
+<span><span class="MathJax_Preview">\exp(-(\frac{{(\theta-\overline{\theta})}^{2}}{2\sigma_{\theta}^{2}}
++ \frac{{(\phi-\overline{\phi})}^{2}}{2\sigma_{\phi}^{2}}))</span><script type="math/tex">\exp(-(\frac{{(\theta-\overline{\theta})}^{2}}{2\sigma_{\theta}^{2}}
++ \frac{{(\phi-\overline{\phi})}^{2}}{2\sigma_{\phi}^{2}}))</script></span>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.ElongatedGaussian.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.ElongatedGaussian.p_sigma"><code class="name">var <span class="ident">p_sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma_{\phi}</span><script type="math/tex">\sigma_{\phi}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.ElongatedGaussian.t_sigma"><code class="name">var <span class="ident">t_sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma_{\theta}</span><script type="math/tex">\sigma_{\theta}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.ElongatedGaussian.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.ElongatedGaussian.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Gaussian"><code class="flex name class">
+<span>class <span class="ident">Gaussian</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Gaussian <span><span class="MathJax_Preview">\exp(-\frac{{\ell}^{2}}{2\sigma^{2}})</span><script type="math/tex">\exp(-\frac{{\ell}^{2}}{2\sigma^{2}})</script></span>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Gaussian.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Gaussian.sigma"><code class="name">var <span class="ident">sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma</span><script type="math/tex">\sigma</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.Gaussian.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Gaussian.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.HarmonicGaussian"><code class="flex name class">
+<span>class <span class="ident">HarmonicGaussian</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a harmonic Gaussian
+<span><span class="MathJax_Preview">\exp(-(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}}
++ \frac{{m}^{2}}{2\sigma_{m}^{2}}))</span><script type="math/tex">\exp(-(\frac{{\ell}^{2}}{2\sigma_{\ell}^{2}}
++ \frac{{m}^{2}}{2\sigma_{m}^{2}}))</script></span>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.HarmonicGaussian.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.HarmonicGaussian.l_sigma"><code class="name">var <span class="ident">l_sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma_{\ell}</span><script type="math/tex">\sigma_{\ell}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.HarmonicGaussian.m_sigma"><code class="name">var <span class="ident">m_sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma_{m}</span><script type="math/tex">\sigma_{m}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.HarmonicGaussian.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.HarmonicGaussian.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Identity"><code class="flex name class">
+<span>class <span class="ident">Identity</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create an identity function.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Identity.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Identity.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Identity.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.NoiseEarth"><code class="flex name class">
+<span>class <span class="ident">NoiseEarth</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a noised signal of the topographic map of the Earth.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.NoiseEarth.SNR"><code class="name">var <span class="ident">SNR</span> : float</code></dt>
+<dd>
+<div class="desc"><p>A parameter which controls the level of signal-to-noise in the noised
+data.</p></div>
+</dd>
+<dt id="sleplet.functions.NoiseEarth.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.NoiseEarth.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.NoiseEarth.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Ridgelets"><code class="flex name class">
+<span>class <span class="ident">Ridgelets</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Crates scale-discretised wavelets. As seen in
+<a href="https://arxiv.org/abs/1510.01595">https://arxiv.org/abs/1510.01595</a>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Ridgelets.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.spin"><code class="name">var <span class="ident">spin</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Spin value.</p></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Ridgelets.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Slepian"><code class="flex name class">
+<span>class <span class="ident">Slepian</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create Slepian functions of the selected region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Slepian.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Slepian.rank"><code class="name">var <span class="ident">rank</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Slepian eigenvalues are ordered in decreasing value. The option <code>rank</code>
+selects a given Slepian function from the spectrum (p in the papers).</p></div>
+</dd>
+<dt id="sleplet.functions.Slepian.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Slepian.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianAfrica"><code class="flex name class">
+<span>class <span class="ident">SlepianAfrica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Slepian region on the topographic map of the Earth of the
+Africa region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianAfrica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianAfrica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianAfrica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianDiracDelta"><code class="flex name class">
+<span>class <span class="ident">SlepianDiracDelta</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Dirac delta of the Slepian coefficients.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianDiracDelta.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianDiracDelta.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianDiracDelta.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianIdentity"><code class="flex name class">
+<span>class <span class="ident">SlepianIdentity</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create an identify function in the Slepian region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianIdentity.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianIdentity.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianIdentity.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseAfrica"><code class="flex name class">
+<span>class <span class="ident">SlepianNoiseAfrica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a noised Slepian region on the topographic map of the Earth of
+the Africa region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianNoiseAfrica.SNR"><code class="name">var <span class="ident">SNR</span> : float</code></dt>
+<dd>
+<div class="desc"><p>A parameter which controls the level of signal-to-noise in the noised
+data.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseAfrica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseAfrica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseAfrica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseSouthAmerica"><code class="flex name class">
+<span>class <span class="ident">SlepianNoiseSouthAmerica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a noised Slepian region on the topographic map of the Earth of the
+South America region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianNoiseSouthAmerica.SNR"><code class="name">var <span class="ident">SNR</span> : float</code></dt>
+<dd>
+<div class="desc"><p>A parameter which controls the level of signal-to-noise in the noised
+data.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseSouthAmerica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseSouthAmerica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianNoiseSouthAmerica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianSouthAmerica"><code class="flex name class">
+<span>class <span class="ident">SlepianSouthAmerica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a Slepian region on the topographic map of the Earth of the
+South America region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianSouthAmerica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianSouthAmerica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianSouthAmerica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica"><code class="flex name class">
+<span>class <span class="ident">SlepianWaveletCoefficientsAfrica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create Slepian wavelet coefficients of the Africa region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica"><code class="flex name class">
+<span>class <span class="ident">SlepianWaveletCoefficientsSouthAmerica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create Slepian wavelet coefficients of the South America region.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets"><code class="flex name class">
+<span>class <span class="ident">SlepianWavelets</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the Slepian wavelets.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SlepianWavelets.B"><code class="name">var <span class="ident">B</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The wavelet parameter. Represented as <span><span class="MathJax_Preview">\lambda</span><script type="math/tex">\lambda</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets.j"><code class="name">var <span class="ident">j</span> : int | None</code></dt>
+<dd>
+<div class="desc"><p>Option to select a given wavelet. <code>None</code> indicates the scaling function,
+whereas <code>0</code> would correspond to the selected <code>j_min</code>.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets.j_min"><code class="name">var <span class="ident">j_min</span> : int</code></dt>
+<dd>
+<div class="desc"><p>The minimum wavelet scale. Represented as <span><span class="MathJax_Preview">J_{0}</span><script type="math/tex">J_{0}</script></span> in the papers.</p></div>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SlepianWavelets.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.fp.Fp" href="fp.html#sleplet.functions.fp.Fp">Fp</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.fp.Fp.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.fp.Fp.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SouthAmerica"><code class="flex name class">
+<span>class <span class="ident">SouthAmerica</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the South America region of the topographic map of the Earth.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SouthAmerica.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SouthAmerica.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SouthAmerica.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SphericalHarmonic"><code class="flex name class">
+<span>class <span class="ident">SphericalHarmonic</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create spherical harmonic functions.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SphericalHarmonic.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SphericalHarmonic.ell"><code class="name">var <span class="ident">ell</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Degree <span><span class="MathJax_Preview">\ell \geq 0</span><script type="math/tex">\ell \geq 0</script></span>.</p></div>
+</dd>
+<dt id="sleplet.functions.SphericalHarmonic.m"><code class="name">var <span class="ident">m</span> : int</code></dt>
+<dd>
+<div class="desc"><p>Order <span><span class="MathJax_Preview">\leq |\ell|</span><script type="math/tex">\leq |\ell|</script></span></p></div>
+</dd>
+<dt id="sleplet.functions.SphericalHarmonic.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SphericalHarmonic.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.SquashedGaussian"><code class="flex name class">
+<span>class <span class="ident">SquashedGaussian</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create a squashed Gaussian
+<span><span class="MathJax_Preview">\exp(-\frac{1}{2}{(\frac{\theta-\overline{\theta}}{\sigma_{\theta}})}^{2})
+\sin{(\nu_{\phi}\phi)}</span><script type="math/tex">\exp(-\frac{1}{2}{(\frac{\theta-\overline{\theta}}{\sigma_{\theta}})}^{2})
+\sin{(\nu_{\phi}\phi)}</script></span>.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.SquashedGaussian.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SquashedGaussian.freq"><code class="name">var <span class="ident">freq</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\nu_{\phi}</span><script type="math/tex">\nu_{\phi}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.SquashedGaussian.t_sigma"><code class="name">var <span class="ident">t_sigma</span> : float</code></dt>
+<dd>
+<div class="desc"><p>Sets the <span><span class="MathJax_Preview">\sigma_{\theta}</span><script type="math/tex">\sigma_{\theta}</script></span> value.</p></div>
+</dd>
+<dt id="sleplet.functions.SquashedGaussian.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.SquashedGaussian.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+<dt id="sleplet.functions.Wmap"><code class="flex name class">
+<span>class <span class="ident">Wmap</span></span>
+<span>(</span><span>*args: Any, **kwargs: Any)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Create the WMAP data.</p></div>
+<h3>Ancestors</h3>
+<ul class="hlist">
+<li><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></li>
+<li><a title="sleplet.functions.coefficients.Coefficients" href="coefficients.html#sleplet.functions.coefficients.Coefficients">Coefficients</a></li>
+</ul>
+<h3>Class variables</h3>
+<dl>
+<dt id="sleplet.functions.Wmap.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Wmap.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+<dt id="sleplet.functions.Wmap.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[typing.Any, numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dd>
+<div class="desc"></div>
+</dd>
+</dl>
+<h3>Inherited members</h3>
+<ul class="hlist">
+<li><code><b><a title="sleplet.functions.flm.Flm" href="flm.html#sleplet.functions.flm.Flm">Flm</a></b></code>:
+<ul class="hlist">
+<li><code><a title="sleplet.functions.flm.Flm.L" href="coefficients.html#sleplet.functions.coefficients.Coefficients.L">L</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.convolve" href="coefficients.html#sleplet.functions.coefficients.Coefficients.convolve">convolve</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.extra_args" href="coefficients.html#sleplet.functions.coefficients.Coefficients.extra_args">extra_args</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.noise" href="coefficients.html#sleplet.functions.coefficients.Coefficients.noise">noise</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.region" href="coefficients.html#sleplet.functions.coefficients.Coefficients.region">region</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.rotate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.rotate">rotate</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.smoothing" href="coefficients.html#sleplet.functions.coefficients.Coefficients.smoothing">smoothing</a></code></li>
+<li><code><a title="sleplet.functions.flm.Flm.translate" href="coefficients.html#sleplet.functions.coefficients.Coefficients.translate">translate</a></code></li>
+</ul>
+</li>
+</ul>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="sleplet" href="../index.html">sleplet</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-submodules">Sub-modules</a></h3>
+<ul>
+<li><code><a title="sleplet.functions.africa" href="africa.html">sleplet.functions.africa</a></code></li>
+<li><code><a title="sleplet.functions.axisymmetric_wavelet_coefficients_africa" href="axisymmetric_wavelet_coefficients_africa.html">sleplet.functions.axisymmetric_wavelet_coefficients_africa</a></code></li>
+<li><code><a title="sleplet.functions.axisymmetric_wavelet_coefficients_earth" href="axisymmetric_wavelet_coefficients_earth.html">sleplet.functions.axisymmetric_wavelet_coefficients_earth</a></code></li>
+<li><code><a title="sleplet.functions.axisymmetric_wavelet_coefficients_south_america" href="axisymmetric_wavelet_coefficients_south_america.html">sleplet.functions.axisymmetric_wavelet_coefficients_south_america</a></code></li>
+<li><code><a title="sleplet.functions.axisymmetric_wavelets" href="axisymmetric_wavelets.html">sleplet.functions.axisymmetric_wavelets</a></code></li>
+<li><code><a title="sleplet.functions.coefficients" href="coefficients.html">sleplet.functions.coefficients</a></code></li>
+<li><code><a title="sleplet.functions.dirac_delta" href="dirac_delta.html">sleplet.functions.dirac_delta</a></code></li>
+<li><code><a title="sleplet.functions.earth" href="earth.html">sleplet.functions.earth</a></code></li>
+<li><code><a title="sleplet.functions.elongated_gaussian" href="elongated_gaussian.html">sleplet.functions.elongated_gaussian</a></code></li>
+<li><code><a title="sleplet.functions.flm" href="flm.html">sleplet.functions.flm</a></code></li>
+<li><code><a title="sleplet.functions.fp" href="fp.html">sleplet.functions.fp</a></code></li>
+<li><code><a title="sleplet.functions.gaussian" href="gaussian.html">sleplet.functions.gaussian</a></code></li>
+<li><code><a title="sleplet.functions.harmonic_gaussian" href="harmonic_gaussian.html">sleplet.functions.harmonic_gaussian</a></code></li>
+<li><code><a title="sleplet.functions.identity" href="identity.html">sleplet.functions.identity</a></code></li>
+<li><code><a title="sleplet.functions.noise_earth" href="noise_earth.html">sleplet.functions.noise_earth</a></code></li>
+<li><code><a title="sleplet.functions.ridgelets" href="ridgelets.html">sleplet.functions.ridgelets</a></code></li>
+<li><code><a title="sleplet.functions.slepian" href="slepian.html">sleplet.functions.slepian</a></code></li>
+<li><code><a title="sleplet.functions.slepian_africa" href="slepian_africa.html">sleplet.functions.slepian_africa</a></code></li>
+<li><code><a title="sleplet.functions.slepian_dirac_delta" href="slepian_dirac_delta.html">sleplet.functions.slepian_dirac_delta</a></code></li>
+<li><code><a title="sleplet.functions.slepian_identity" href="slepian_identity.html">sleplet.functions.slepian_identity</a></code></li>
+<li><code><a title="sleplet.functions.slepian_noise_africa" href="slepian_noise_africa.html">sleplet.functions.slepian_noise_africa</a></code></li>
+<li><code><a title="sleplet.functions.slepian_noise_south_america" href="slepian_noise_south_america.html">sleplet.functions.slepian_noise_south_america</a></code></li>
+<li><code><a title="sleplet.functions.slepian_south_america" href="slepian_south_america.html">sleplet.functions.slepian_south_america</a></code></li>
+<li><code><a title="sleplet.functions.slepian_wavelet_coefficients_africa" href="slepian_wavelet_coefficients_africa.html">sleplet.functions.slepian_wavelet_coefficients_africa</a></code></li>
+<li><code><a title="sleplet.functions.slepian_wavelet_coefficients_south_america" href="slepian_wavelet_coefficients_south_america.html">sleplet.functions.slepian_wavelet_coefficients_south_america</a></code></li>
+<li><code><a title="sleplet.functions.slepian_wavelets" href="slepian_wavelets.html">sleplet.functions.slepian_wavelets</a></code></li>
+<li><code><a title="sleplet.functions.south_america" href="south_america.html">sleplet.functions.south_america</a></code></li>
+<li><code><a title="sleplet.functions.spherical_harmonic" href="spherical_harmonic.html">sleplet.functions.spherical_harmonic</a></code></li>
+<li><code><a title="sleplet.functions.squashed_gaussian" href="squashed_gaussian.html">sleplet.functions.squashed_gaussian</a></code></li>
+<li><code><a title="sleplet.functions.wmap" href="wmap.html">sleplet.functions.wmap</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="sleplet.functions.Africa" href="#sleplet.functions.Africa">Africa</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Africa.coefficients" href="#sleplet.functions.Africa.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Africa.wavelet_coefficients" href="#sleplet.functions.Africa.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Africa.wavelets" href="#sleplet.functions.Africa.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica">AxisymmetricWaveletCoefficientsAfrica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.B" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.B">B</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j">j</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j_min" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelet_coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelets" href="#sleplet.functions.AxisymmetricWaveletCoefficientsAfrica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth">AxisymmetricWaveletCoefficientsEarth</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.B" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.B">B</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j">j</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j_min" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelet_coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelets" href="#sleplet.functions.AxisymmetricWaveletCoefficientsEarth.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica">AxisymmetricWaveletCoefficientsSouthAmerica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.B" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.B">B</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j">j</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j_min" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelet_coefficients" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelets" href="#sleplet.functions.AxisymmetricWaveletCoefficientsSouthAmerica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.AxisymmetricWavelets" href="#sleplet.functions.AxisymmetricWavelets">AxisymmetricWavelets</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.B" href="#sleplet.functions.AxisymmetricWavelets.B">B</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.coefficients" href="#sleplet.functions.AxisymmetricWavelets.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.j" href="#sleplet.functions.AxisymmetricWavelets.j">j</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.j_min" href="#sleplet.functions.AxisymmetricWavelets.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.wavelet_coefficients" href="#sleplet.functions.AxisymmetricWavelets.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.AxisymmetricWavelets.wavelets" href="#sleplet.functions.AxisymmetricWavelets.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.DiracDelta" href="#sleplet.functions.DiracDelta">DiracDelta</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.DiracDelta.coefficients" href="#sleplet.functions.DiracDelta.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.DiracDelta.wavelet_coefficients" href="#sleplet.functions.DiracDelta.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.DiracDelta.wavelets" href="#sleplet.functions.DiracDelta.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Earth" href="#sleplet.functions.Earth">Earth</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Earth.coefficients" href="#sleplet.functions.Earth.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Earth.wavelet_coefficients" href="#sleplet.functions.Earth.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Earth.wavelets" href="#sleplet.functions.Earth.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.ElongatedGaussian" href="#sleplet.functions.ElongatedGaussian">ElongatedGaussian</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.ElongatedGaussian.coefficients" href="#sleplet.functions.ElongatedGaussian.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.ElongatedGaussian.p_sigma" href="#sleplet.functions.ElongatedGaussian.p_sigma">p_sigma</a></code></li>
+<li><code><a title="sleplet.functions.ElongatedGaussian.t_sigma" href="#sleplet.functions.ElongatedGaussian.t_sigma">t_sigma</a></code></li>
+<li><code><a title="sleplet.functions.ElongatedGaussian.wavelet_coefficients" href="#sleplet.functions.ElongatedGaussian.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.ElongatedGaussian.wavelets" href="#sleplet.functions.ElongatedGaussian.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Gaussian" href="#sleplet.functions.Gaussian">Gaussian</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Gaussian.coefficients" href="#sleplet.functions.Gaussian.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Gaussian.sigma" href="#sleplet.functions.Gaussian.sigma">sigma</a></code></li>
+<li><code><a title="sleplet.functions.Gaussian.wavelet_coefficients" href="#sleplet.functions.Gaussian.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Gaussian.wavelets" href="#sleplet.functions.Gaussian.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.HarmonicGaussian" href="#sleplet.functions.HarmonicGaussian">HarmonicGaussian</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.HarmonicGaussian.coefficients" href="#sleplet.functions.HarmonicGaussian.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.HarmonicGaussian.l_sigma" href="#sleplet.functions.HarmonicGaussian.l_sigma">l_sigma</a></code></li>
+<li><code><a title="sleplet.functions.HarmonicGaussian.m_sigma" href="#sleplet.functions.HarmonicGaussian.m_sigma">m_sigma</a></code></li>
+<li><code><a title="sleplet.functions.HarmonicGaussian.wavelet_coefficients" href="#sleplet.functions.HarmonicGaussian.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.HarmonicGaussian.wavelets" href="#sleplet.functions.HarmonicGaussian.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Identity" href="#sleplet.functions.Identity">Identity</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Identity.coefficients" href="#sleplet.functions.Identity.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Identity.wavelet_coefficients" href="#sleplet.functions.Identity.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Identity.wavelets" href="#sleplet.functions.Identity.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.NoiseEarth" href="#sleplet.functions.NoiseEarth">NoiseEarth</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.NoiseEarth.SNR" href="#sleplet.functions.NoiseEarth.SNR">SNR</a></code></li>
+<li><code><a title="sleplet.functions.NoiseEarth.coefficients" href="#sleplet.functions.NoiseEarth.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.NoiseEarth.wavelet_coefficients" href="#sleplet.functions.NoiseEarth.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.NoiseEarth.wavelets" href="#sleplet.functions.NoiseEarth.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Ridgelets" href="#sleplet.functions.Ridgelets">Ridgelets</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Ridgelets.B" href="#sleplet.functions.Ridgelets.B">B</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.coefficients" href="#sleplet.functions.Ridgelets.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.j" href="#sleplet.functions.Ridgelets.j">j</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.j_min" href="#sleplet.functions.Ridgelets.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.spin" href="#sleplet.functions.Ridgelets.spin">spin</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.wavelet_coefficients" href="#sleplet.functions.Ridgelets.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Ridgelets.wavelets" href="#sleplet.functions.Ridgelets.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Slepian" href="#sleplet.functions.Slepian">Slepian</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Slepian.coefficients" href="#sleplet.functions.Slepian.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Slepian.rank" href="#sleplet.functions.Slepian.rank">rank</a></code></li>
+<li><code><a title="sleplet.functions.Slepian.wavelet_coefficients" href="#sleplet.functions.Slepian.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Slepian.wavelets" href="#sleplet.functions.Slepian.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianAfrica" href="#sleplet.functions.SlepianAfrica">SlepianAfrica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianAfrica.coefficients" href="#sleplet.functions.SlepianAfrica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianAfrica.wavelet_coefficients" href="#sleplet.functions.SlepianAfrica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianAfrica.wavelets" href="#sleplet.functions.SlepianAfrica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianDiracDelta" href="#sleplet.functions.SlepianDiracDelta">SlepianDiracDelta</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianDiracDelta.coefficients" href="#sleplet.functions.SlepianDiracDelta.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianDiracDelta.wavelet_coefficients" href="#sleplet.functions.SlepianDiracDelta.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianDiracDelta.wavelets" href="#sleplet.functions.SlepianDiracDelta.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianIdentity" href="#sleplet.functions.SlepianIdentity">SlepianIdentity</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianIdentity.coefficients" href="#sleplet.functions.SlepianIdentity.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianIdentity.wavelet_coefficients" href="#sleplet.functions.SlepianIdentity.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianIdentity.wavelets" href="#sleplet.functions.SlepianIdentity.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianNoiseAfrica" href="#sleplet.functions.SlepianNoiseAfrica">SlepianNoiseAfrica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianNoiseAfrica.SNR" href="#sleplet.functions.SlepianNoiseAfrica.SNR">SNR</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseAfrica.coefficients" href="#sleplet.functions.SlepianNoiseAfrica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseAfrica.wavelet_coefficients" href="#sleplet.functions.SlepianNoiseAfrica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseAfrica.wavelets" href="#sleplet.functions.SlepianNoiseAfrica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianNoiseSouthAmerica" href="#sleplet.functions.SlepianNoiseSouthAmerica">SlepianNoiseSouthAmerica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianNoiseSouthAmerica.SNR" href="#sleplet.functions.SlepianNoiseSouthAmerica.SNR">SNR</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseSouthAmerica.coefficients" href="#sleplet.functions.SlepianNoiseSouthAmerica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseSouthAmerica.wavelet_coefficients" href="#sleplet.functions.SlepianNoiseSouthAmerica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianNoiseSouthAmerica.wavelets" href="#sleplet.functions.SlepianNoiseSouthAmerica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianSouthAmerica" href="#sleplet.functions.SlepianSouthAmerica">SlepianSouthAmerica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianSouthAmerica.coefficients" href="#sleplet.functions.SlepianSouthAmerica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianSouthAmerica.wavelet_coefficients" href="#sleplet.functions.SlepianSouthAmerica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianSouthAmerica.wavelets" href="#sleplet.functions.SlepianSouthAmerica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica">SlepianWaveletCoefficientsAfrica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.B" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.B">B</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.coefficients" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.j" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.j">j</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.j_min" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelet_coefficients" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelets" href="#sleplet.functions.SlepianWaveletCoefficientsAfrica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica">SlepianWaveletCoefficientsSouthAmerica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.B" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.B">B</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.coefficients" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j">j</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j_min" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelet_coefficients" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelets" href="#sleplet.functions.SlepianWaveletCoefficientsSouthAmerica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SlepianWavelets" href="#sleplet.functions.SlepianWavelets">SlepianWavelets</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SlepianWavelets.B" href="#sleplet.functions.SlepianWavelets.B">B</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWavelets.coefficients" href="#sleplet.functions.SlepianWavelets.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWavelets.j" href="#sleplet.functions.SlepianWavelets.j">j</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWavelets.j_min" href="#sleplet.functions.SlepianWavelets.j_min">j_min</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWavelets.wavelet_coefficients" href="#sleplet.functions.SlepianWavelets.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SlepianWavelets.wavelets" href="#sleplet.functions.SlepianWavelets.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SouthAmerica" href="#sleplet.functions.SouthAmerica">SouthAmerica</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SouthAmerica.coefficients" href="#sleplet.functions.SouthAmerica.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SouthAmerica.wavelet_coefficients" href="#sleplet.functions.SouthAmerica.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SouthAmerica.wavelets" href="#sleplet.functions.SouthAmerica.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SphericalHarmonic" href="#sleplet.functions.SphericalHarmonic">SphericalHarmonic</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SphericalHarmonic.coefficients" href="#sleplet.functions.SphericalHarmonic.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SphericalHarmonic.ell" href="#sleplet.functions.SphericalHarmonic.ell">ell</a></code></li>
+<li><code><a title="sleplet.functions.SphericalHarmonic.m" href="#sleplet.functions.SphericalHarmonic.m">m</a></code></li>
+<li><code><a title="sleplet.functions.SphericalHarmonic.wavelet_coefficients" href="#sleplet.functions.SphericalHarmonic.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SphericalHarmonic.wavelets" href="#sleplet.functions.SphericalHarmonic.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.SquashedGaussian" href="#sleplet.functions.SquashedGaussian">SquashedGaussian</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.SquashedGaussian.coefficients" href="#sleplet.functions.SquashedGaussian.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SquashedGaussian.freq" href="#sleplet.functions.SquashedGaussian.freq">freq</a></code></li>
+<li><code><a title="sleplet.functions.SquashedGaussian.t_sigma" href="#sleplet.functions.SquashedGaussian.t_sigma">t_sigma</a></code></li>
+<li><code><a title="sleplet.functions.SquashedGaussian.wavelet_coefficients" href="#sleplet.functions.SquashedGaussian.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.SquashedGaussian.wavelets" href="#sleplet.functions.SquashedGaussian.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+<li>
+<h4><code><a title="sleplet.functions.Wmap" href="#sleplet.functions.Wmap">Wmap</a></code></h4>
+<ul class="">
+<li><code><a title="sleplet.functions.Wmap.coefficients" href="#sleplet.functions.Wmap.coefficients">coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Wmap.wavelet_coefficients" href="#sleplet.functions.Wmap.wavelet_coefficients">wavelet_coefficients</a></code></li>
+<li><code><a title="sleplet.functions.Wmap.wavelets" href="#sleplet.functions.Wmap.wavelets">wavelets</a></code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.11.1</a>.</p>
+</footer>
+</body>
+</html>
