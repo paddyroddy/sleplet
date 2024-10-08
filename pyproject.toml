@@ -14,7 +14,6 @@ classifiers = [
     "Operating System :: POSIX",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering :: Image Processing",
@@ -68,9 +67,10 @@ optional-dependencies = {dev = [
     "pdoc3",
 ], readme = [
     "pytest-codeblocks",
+    "pytest-xdist",
 ]}
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 scripts = {mesh = """\
     sleplet._scripts.plotting_on_mesh:main\
     """, sphere = """\
@@ -213,16 +213,10 @@ overrides."tool.ruff.lint.isort.section-order".inline_arrays = false
 
 [tool.tox]
 legacy_tox_ini = """
-    [gh-actions]
+    [gh]
     python =
-        3.10: py310
         3.11: py311
         3.12: py312
-
-    [gh-actions:env]
-    OS =
-        ubuntu-latest: linux
-        macos-latest: macos
 
     [testenv]
     commands =
@@ -231,5 +225,5 @@ legacy_tox_ini = """
         pytest-cov
 
     [tox]
-    env_list = py{310,311,312}-{linux,macos}
+    env_list = py{311,312}
 """
