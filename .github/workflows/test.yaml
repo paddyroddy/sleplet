@@ -19,17 +19,15 @@ jobs:
           - macos-latest
           - ubuntu-latest
         python-version:
-          - "3.10"
           - "3.11"
           - "3.12"
     steps:
       # yamllint disable-line rule:line-length
-      - uses: paddyroddy/.github/actions/python/tox@cae02393710f18f5fbacd9545d1a38f0d661758e # v0
+      - uses: paddyroddy/.github/actions/python/tox@2e83ccde571114eea4dacae50214fd1dff839be0 # v0
         with:
           cache-path: |-
             .tox
             ~/.cache/sleplet
-          operating-system: ${{ matrix.os }}
           pyproject-toml: ./pyproject.toml
           python-version: ${{ matrix.python-version }}
 
@@ -52,8 +50,6 @@ jobs:
           parallel-finished: true
           # yamllint disable-line rule:quoted-strings
           carryforward: "\
-            run-macos-latest-3.10,\
-            run-ubuntu-latest-3.10,\
             run-macos-latest-3.11,\
             run-ubuntu-latest-3.11,\
             run-macos-latest-3.12,\
