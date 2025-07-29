@@ -5,6 +5,24 @@ requires = [
     "setuptools-scm",
 ]
 
+[dependency-groups]
+dev = [
+    "build",
+    "mypy",
+    "pre-commit",
+    "pytest",
+    "ruff",
+    "tox",
+    "tuna",
+    "twine",
+]
+docs = [
+    "pdoc3",
+]
+readme = [
+    "pytest-codeblocks",
+]
+
 [project]
 authors = [
     {email = "patrickjamesroddy@gmail.com", name = "Patrick J. Roddy"},
@@ -15,6 +33,7 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Topic :: Scientific/Engineering :: Image Processing",
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Scientific/Engineering :: Physics",
@@ -56,38 +75,15 @@ license-files = [
     "LICENCE.txt",
 ]
 name = "sleplet"
-optional-dependencies = {dev = [
-    "build",
-    "mypy",
-    "pre-commit",
-    "pytest",
-    "ruff",
-    "tox",
-    "tuna",
-    "twine",
-], docs = [
-    "pdoc3",
-], readme = [
-    "pytest-codeblocks",
-]}
 readme = "README.md"
 requires-python = ">=3.11"
-scripts = {mesh = """\
-    sleplet._scripts.plotting_on_mesh:main\
-    """, sphere = """\
-    sleplet._scripts.plotting_on_sphere:main\
-    """}
-urls = {Code = """\
-    https://github.com/astro-informatics/sleplet\
-    """, Documentation = """\
-    https://astro-informatics.github.io/sleplet\
-    """, Download = """\
-    https://pypi.org/project/sleplet\
-    """, Homepage = """\
-    https://github.com/astro-informatics/sleplet\
-    """, Issues = """\
-    https://github.com/astro-informatics/sleplet/issues\
-    """}
+scripts.mesh = "sleplet._scripts.plotting_on_mesh:main"
+scripts.sphere = "sleplet._scripts.plotting_on_sphere:main"
+urls.Code = "https://github.com/astro-informatics/sleplet"
+urls.Documentation = "https://astro-informatics.github.io/sleplet"
+urls.Download = "https://pypi.org/project/sleplet"
+urls.Homepage = "https://github.com/astro-informatics/sleplet"
+urls.Issues = "https://github.com/astro-informatics/sleplet/issues"
 
 [tool.check-manifest]
 ignore = [
@@ -210,6 +206,7 @@ overrides."tool.tox.env_run_base.commands".inline_arrays = false
 env_list = [
     "py311",
     "py312",
+    "py313",
 ]
 env_run_base = {commands = [
     [
@@ -224,4 +221,6 @@ gh.python = {"3.11" = [
     "py311",
 ], "3.12" = [
     "py312",
+], "3.13" = [
+    "py313",
 ]}
