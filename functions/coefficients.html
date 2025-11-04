@@ -65,15 +65,16 @@ sphere.</p></div>
 <dl>
 <dt id="sleplet.functions.coefficients.Coefficients.L"><code class="name">var <span class="ident">L</span> : int</code></dt>
 <dd>
-<div class="desc"><p>The type of the None singleton.</p></div>
+<div class="desc"><p>The spherical harmonic bandlimit.</p></div>
 </dd>
-<dt id="sleplet.functions.coefficients.Coefficients.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dt id="sleplet.functions.coefficients.Coefficients.coefficients"><code class="name">var <span class="ident">coefficients</span> : numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
 <dd>
 <div class="desc"><p>The type of the None singleton.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.extra_args"><code class="name">var <span class="ident">extra_args</span> : list[int] | None</code></dt>
 <dd>
-<div class="desc"><p>The type of the None singleton.</p></div>
+<div class="desc"><p>Control the extra arguments for the given set of spherical
+coefficients. Only to be set by the <code>sphere</code> CLI.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.name"><code class="name">var <span class="ident">name</span> : str</code></dt>
 <dd>
@@ -81,7 +82,7 @@ sphere.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.noise"><code class="name">var <span class="ident">noise</span> : float | None</code></dt>
 <dd>
-<div class="desc"><p>The type of the None singleton.</p></div>
+<div class="desc"><p>How much to noise the data.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.reality"><code class="name">var <span class="ident">reality</span> : bool</code></dt>
 <dd>
@@ -89,11 +90,11 @@ sphere.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.region"><code class="name">var <span class="ident">region</span> : <a title="sleplet.slepian.region.Region" href="../slepian/region.html#sleplet.slepian.region.Region">Region</a> | None</code></dt>
 <dd>
-<div class="desc"><p>The type of the None singleton.</p></div>
+<div class="desc"><p>Whether to set a region or not, used in the Slepian case.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.smoothing"><code class="name">var <span class="ident">smoothing</span> : int | None</code></dt>
 <dd>
-<div class="desc"><p>The type of the None singleton.</p></div>
+<div class="desc"><p>How much to smooth the topographic map of the Earth by.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.snr"><code class="name">var <span class="ident">snr</span> : float | None</code></dt>
 <dd>
@@ -103,11 +104,11 @@ sphere.</p></div>
 <dd>
 <div class="desc"><p>The type of the None singleton.</p></div>
 </dd>
-<dt id="sleplet.functions.coefficients.Coefficients.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dt id="sleplet.functions.coefficients.Coefficients.wavelet_coefficients"><code class="name">var <span class="ident">wavelet_coefficients</span> : numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
 <dd>
 <div class="desc"><p>The type of the None singleton.</p></div>
 </dd>
-<dt id="sleplet.functions.coefficients.Coefficients.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
+<dt id="sleplet.functions.coefficients.Coefficients.wavelets"><code class="name">var <span class="ident">wavelets</span> : numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</code></dt>
 <dd>
 <div class="desc"><p>The type of the None singleton.</p></div>
 </dd>
@@ -115,7 +116,7 @@ sphere.</p></div>
 <h3>Methods</h3>
 <dl>
 <dt id="sleplet.functions.coefficients.Coefficients.convolve"><code class="name flex">
-<span>def <span class="ident">convolve</span></span>(<span>self: Self,<br>f_coefficient: numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]],<br>g_coefficient: numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]],<br>*,<br>shannon: int | None = None) ‑> numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</span>
+<span>def <span class="ident">convolve</span></span>(<span>self: Self,<br>f_coefficient: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]],<br>g_coefficient: numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]],<br>*,<br>shannon: int | None = None) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Perform the sifting convolution of the two inputs.</p>
@@ -132,7 +133,7 @@ sphere.</p></div>
 <p>The sifting convolution of the two inputs.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.rotate"><code class="name flex">
-<span>def <span class="ident">rotate</span></span>(<span>self: Self, alpha: float, beta: float, *, gamma: float = 0) ‑> numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128]]</span>
+<span>def <span class="ident">rotate</span></span>(<span>self: Self, alpha: float, beta: float, *, gamma: float = 0) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128]]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Rotates given flm on the sphere by alpha/beta/gamma.</p>
@@ -149,7 +150,7 @@ sphere.</p></div>
 <p>The rotated spherical harmonic coefficients.</p></div>
 </dd>
 <dt id="sleplet.functions.coefficients.Coefficients.translate"><code class="name flex">
-<span>def <span class="ident">translate</span></span>(<span>self: Self, alpha: float, beta: float, *, shannon: int | None = None) ‑> numpy.ndarray[tuple[int, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</span>
+<span>def <span class="ident">translate</span></span>(<span>self: Self, alpha: float, beta: float, *, shannon: int | None = None) ‑> numpy.ndarray[tuple[typing.Any, ...], numpy.dtype[numpy.complex128 | numpy.float64]]</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Perform the translation of the coefficients, used in the sifting convolution.</p>
